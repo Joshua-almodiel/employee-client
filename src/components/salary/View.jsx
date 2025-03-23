@@ -15,7 +15,7 @@ const View = () => {
     const fetchSalaries = async () => {
     try {
         console.log("Fetching salary for ID:", id);
-        const response = await axios.get(`http://localhost:5000/api/salary/${id}/${user.role}`, {
+        const response = await axios.get(`https://employee-api-pi.vercel.app/api/salary/${id}/${user.role}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
 

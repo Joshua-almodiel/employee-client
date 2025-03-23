@@ -10,7 +10,7 @@ const DetailsLeave = () => {
     useEffect(() => {
         const fetchLeaves = async () => {
             try {
-                const responnse = await axios.get(`http://localhost:5000/api/leave/detail/${id}`,
+                const responnse = await axios.get(`https://employee-api-pi.vercel.app/api/leave/detail/${id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -31,7 +31,7 @@ const DetailsLeave = () => {
 
     const changeStatus = async (id, status) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/leave/${id}`, {status},
+            const response = await axios.put(`https://employee-api-pi.vercel.app/api/leave/${id}`, {status},
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -60,7 +60,7 @@ const DetailsLeave = () => {
                     <div className="flex justify-center items-center">
                         <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-gray-700 shadow-lg hover:border-blue-500 transition duration-200">
                             <img
-                                src={`http://localhost:5000/${leave.employeeId.userId.profileImage}`}
+                                src={`https://employee-api-pi.vercel.app/${leave.employeeId.userId.profileImage}`}
                                 alt="Profile"
                                 className="w-full h-full object-cover"
                             />

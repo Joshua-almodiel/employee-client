@@ -12,7 +12,7 @@ const List = () => {
     const fetchLeaves = async () => {
         try {
             console.log("Fetching leaves for ID:", id);
-            const response = await axios.get(`http://localhost:5000/api/leave/${id}/${user.role}`, {
+            const response = await axios.get(`https://employee-api-pi.vercel.app/api/leave/${id}/${user.role}`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             });
 
